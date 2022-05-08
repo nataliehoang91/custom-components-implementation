@@ -3,40 +3,118 @@ import "./App.css";
 
 import styled from "styled-components";
 
-import Button from "./components/Button";
+import Button from "./components/Button/Button";
 
 const Wrapper = styled.div`
   margin: 12px;
 `;
+const FlexWrapper = styled.div`
+  display: flex;
+`;
+const Container = styled.div`
+  padding: 48px;
+`;
 
 function App() {
   return (
-    <div style={{ padding: 50 }}>
-      <Wrapper>
-        <Button text="Basic" onClick={() => console.log("clicked")} />
-      </Wrapper>
-      <Wrapper>
-        <Button
-          text="Primary"
-          variant="primary"
-          onClick={() => console.log("clicked")}
-        />
-      </Wrapper>
-      <Wrapper>
-        <Button
-          text="Success"
-          variant="success"
-          onClick={() => console.log("clicked")}
-        />
-      </Wrapper>
-      <Wrapper>
-        <Button
-          text="Error"
-          variant="error"
-          onClick={() => console.log("clicked")}
-        />
-      </Wrapper>
-    </div>
+    <Container>
+      <FlexWrapper>
+        <Wrapper>
+          <Button text="Filled Basic" onClick={() => console.log("clicked")} />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Filled Primary"
+            variant="primary"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Filled Success"
+            variant="success"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Filled Error"
+            variant="error"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+      </FlexWrapper>
+      <FlexWrapper>
+        <Wrapper>
+          <Button
+            text="Outline Basic"
+            btnType="outline"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Outline Primary"
+            variant="primary"
+            btnType="outline"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Outline Success"
+            variant="success"
+            btnType="outline"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Outline Error"
+            variant="error"
+            btnType="outline"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+      </FlexWrapper>
+      <FlexWrapper>
+        <Wrapper>
+          <Button
+            btnType="link"
+            text="Basic Link"
+            href="#"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            btnType="link"
+            text="Primary Link"
+            variant="primary"
+            href="#"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            btnType="link"
+            text="Success Link"
+            variant="success"
+            href="#"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            btnType="link"
+            text="Error Link"
+            variant="error"
+            href="#"
+            onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+      </FlexWrapper>
+    </Container>
   );
 }
 
