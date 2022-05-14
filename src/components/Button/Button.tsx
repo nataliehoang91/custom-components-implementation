@@ -5,6 +5,7 @@ import {
   getBtnTypeThemeVariant,
   ThemeVariants,
   BtnTypes,
+  getThemeDisabled,
 } from "./StyledButton";
 
 export interface ButtonProps {
@@ -32,9 +33,10 @@ const Button = ({
     <StyledButton
       onClick={onClick}
       onBlur={onBlur}
-      disabled={disabled}
+      disabledType={getThemeDisabled(disabled, btnType)}
       loading={loading}
       variant={variant}
+      disabled={disabled}
       btnTypeThemeVariant={getBtnTypeThemeVariant(variant, btnType)}
     >
       {text}

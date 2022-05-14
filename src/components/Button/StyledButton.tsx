@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 
 export type ThemeVariants = "primary" | "basic" | "success" | "error";
 export type BtnTypes = "filled" | "link" | "outline";
+export type DisabledType = "outline-disabled" | "filled-disabled" | undefined;
+
 export type BtnTypeThemeVariants =
   | "outline-primary"
   | "outline-success"
@@ -26,6 +28,21 @@ const FILLED_VARIANTS = {
   basic: "filled-basic",
 } as const;
 
+export const getThemeDisabled = (
+  disabled: boolean,
+  btnType: BtnTypes
+): DisabledType => {
+  if (disabled === true) {
+    switch (btnType) {
+      case "outline":
+        return "outline-disabled";
+      case "filled":
+        return "filled-disabled";
+    }
+  }
+  return;
+};
+
 export const getBtnTypeThemeVariant = (
   variant: ThemeVariants,
   btnType: BtnTypes
@@ -46,9 +63,23 @@ export const StyledLinkButton = styled.a<{
   disabled?: boolean;
 }>`
   text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+
+  ${(props) => {
+    switch (props.disabled) {
+      case true:
+        return css`
+          color: rgb(114, 116, 120) !important;
+          pointer-events: none;
+        `;
+      case false:
+        return css`
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        `;
+    }
+  }}
 
   ${(props) => {
     switch (props.variant) {
@@ -88,8 +119,9 @@ export const StyledButton = styled("button")<{
   loading?: boolean;
   variant?: "primary" | "basic" | "success" | "error";
   btnTypeThemeVariant: BtnTypeThemeVariants;
+  disabledType: DisabledType;
 }>`
-  border-radius: 8px;
+  border-radius: 16px;
   box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
   box-sizing: border-box;
   cursor: pointer;
@@ -179,6 +211,28 @@ export const StyledButton = styled("button")<{
           color: #e62143;
           &:hover {
             background-color: #b5122e;
+          }
+        `;
+    }
+  }};
+
+  ${(props) => {
+    switch (props.disabledType) {
+      case "outline-disabled":
+        return css`
+          &:disabled {
+            background: transparent;
+            color: rgb(163, 166, 172);
+            border-color: rgb(163, 166, 172);
+            cursor: not-allowed;
+          }
+        `;
+      case "filled-disabled":
+        return css`
+          &:disabled {
+            background: rgb(218, 219, 222);
+            color: rgb(114, 116, 120);
+            cursor: not-allowed;
           }
         `;
     }

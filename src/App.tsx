@@ -114,6 +114,32 @@ function App() {
           />
         </Wrapper>
       </FlexWrapper>
+      <FlexWrapper>
+        <Wrapper>
+          <Button
+            text="Filled (Disabled)"
+            onClick={() => console.log("clicked")}
+            disabled
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Outline (Disabled)"
+            variant="primary"
+            onClick={() => console.log("clicked")}
+            disabled
+            btnType="outline"
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Link (Disabled)"
+            onClick={() => console.log("clicked")}
+            disabled
+            btnType="link"
+          />
+        </Wrapper>
+      </FlexWrapper>
     </Container>
   );
 }
