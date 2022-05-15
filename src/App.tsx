@@ -1,9 +1,10 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Button from "./components/Button/Button";
+import Button from './components/Button/Button';
+import InputText from './components/InputText/InputText';
 
 const Wrapper = styled.div`
   margin: 12px;
@@ -31,27 +32,27 @@ function App() {
       <SectionTitle>Filled</SectionTitle>
       <FlexWrapper>
         <Wrapper>
-          <Button text="Filled Basic" onClick={() => console.log("clicked")} />
+          <Button text="Filled Basic" onClick={() => console.log('clicked')} />
         </Wrapper>
         <Wrapper>
           <Button
             text="Filled Primary"
             variant="primary"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
           <Button
             text="Filled Success"
             variant="success"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
           <Button
             text="Filled Error"
             variant="error"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
       </FlexWrapper>
@@ -61,7 +62,7 @@ function App() {
           <Button
             text="Outline Basic"
             btnType="outline"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -69,7 +70,7 @@ function App() {
             text="Outline Primary"
             variant="primary"
             btnType="outline"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -77,7 +78,7 @@ function App() {
             text="Outline Success"
             variant="success"
             btnType="outline"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -85,7 +86,7 @@ function App() {
             text="Outline Error"
             variant="error"
             btnType="outline"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
       </FlexWrapper>
@@ -96,7 +97,7 @@ function App() {
             btnType="link"
             text="Basic Link"
             href="#"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -105,7 +106,7 @@ function App() {
             text="Primary Link"
             variant="primary"
             href="#"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -114,7 +115,7 @@ function App() {
             text="Success Link"
             variant="success"
             href="#"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -123,7 +124,7 @@ function App() {
             text="Error Link"
             variant="error"
             href="#"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
       </FlexWrapper>
@@ -132,7 +133,7 @@ function App() {
         <Wrapper>
           <Button
             text="Filled (Disabled)"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             disabled
           />
         </Wrapper>
@@ -140,7 +141,7 @@ function App() {
           <Button
             text="Outline (Disabled)"
             variant="primary"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             disabled
             btnType="outline"
           />
@@ -148,7 +149,7 @@ function App() {
         <Wrapper>
           <Button
             text="Link (Disabled)"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             disabled
             btnType="link"
           />
@@ -160,7 +161,7 @@ function App() {
           <Button
             text="Filled Basic"
             variant="basic"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             loading
           />
         </Wrapper>
@@ -168,7 +169,7 @@ function App() {
           <Button
             text="Filled Primary"
             variant="primary"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             loading
           />
         </Wrapper>
@@ -176,7 +177,7 @@ function App() {
           <Button
             text="Filled Success"
             variant="success"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             loading
           />
         </Wrapper>
@@ -184,7 +185,7 @@ function App() {
           <Button
             text="Filled Error"
             variant="error"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             loading
           />
         </Wrapper>
@@ -194,7 +195,7 @@ function App() {
           <Button
             text="Outline Basic"
             variant="basic"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             loading
             btnType="outline"
           />
@@ -203,7 +204,7 @@ function App() {
           <Button
             text="Outline Primary"
             variant="primary"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             loading
             btnType="outline"
           />
@@ -212,7 +213,7 @@ function App() {
           <Button
             text="Outline Success"
             variant="success"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             loading
             btnType="outline"
           />
@@ -221,7 +222,7 @@ function App() {
           <Button
             text="Outline Error"
             variant="error"
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
             loading
             btnType="outline"
           />
@@ -234,7 +235,7 @@ function App() {
             text="Basic Link"
             href="#"
             loading
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -244,7 +245,7 @@ function App() {
             variant="primary"
             href="#"
             loading
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -254,7 +255,7 @@ function App() {
             variant="success"
             href="#"
             loading
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
           />
         </Wrapper>
         <Wrapper>
@@ -264,7 +265,37 @@ function App() {
             variant="error"
             href="#"
             loading
-            onClick={() => console.log("clicked")}
+            onClick={() => console.log('clicked')}
+          />
+        </Wrapper>
+      </FlexWrapper>
+      <SectionTitle>Input</SectionTitle>
+      <FlexWrapper>
+        <Wrapper>
+          <InputText
+            placeholder="This input was disable"
+            id="input1"
+            label="Disabled style"
+            type="text"
+            disabled
+          />
+        </Wrapper>
+        <Wrapper>
+          <InputText
+            id="input2"
+            label="Error style"
+            type="text"
+            isError
+            errorMessage="Got error"
+            placeholder="This is error input"
+          />
+        </Wrapper>
+        <Wrapper>
+          <InputText
+            id="input3"
+            label="Normal style"
+            type="text"
+            placeholder="Please start typing..."
           />
         </Wrapper>
       </FlexWrapper>
