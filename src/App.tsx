@@ -11,14 +11,25 @@ const Wrapper = styled.div`
 `;
 const FlexWrapper = styled.div`
   display: flex;
+  margin: 12px;
 `;
 const Container = styled.div`
   padding: 48px;
 `;
 
+const ComponentTitle = styled.h2`
+  margin-bottom: 8px;
+`;
+
+const SectionTitle = styled.h4`
+  margin-bottom: 8px;
+`;
+
 function App() {
   return (
     <Container>
+      <ComponentTitle>Button</ComponentTitle>
+      <SectionTitle>Filled</SectionTitle>
       <FlexWrapper>
         <Wrapper>
           <Button text="Filled Basic" onClick={() => console.log('clicked')} />
@@ -45,6 +56,7 @@ function App() {
           />
         </Wrapper>
       </FlexWrapper>
+      <SectionTitle>Outline</SectionTitle>
       <FlexWrapper>
         <Wrapper>
           <Button
@@ -78,6 +90,7 @@ function App() {
           />
         </Wrapper>
       </FlexWrapper>
+      <SectionTitle>Link</SectionTitle>
       <FlexWrapper>
         <Wrapper>
           <Button
@@ -115,6 +128,7 @@ function App() {
           />
         </Wrapper>
       </FlexWrapper>
+      <SectionTitle>Disabled State</SectionTitle>
       <FlexWrapper>
         <Wrapper>
           <Button
@@ -141,6 +155,121 @@ function App() {
           />
         </Wrapper>
       </FlexWrapper>
+      <SectionTitle>Loading State</SectionTitle>
+      <FlexWrapper>
+        <Wrapper>
+          <Button
+            text="Filled Basic"
+            variant="basic"
+            onClick={() => console.log('clicked')}
+            loading
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Filled Primary"
+            variant="primary"
+            onClick={() => console.log('clicked')}
+            loading
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Filled Success"
+            variant="success"
+            onClick={() => console.log('clicked')}
+            loading
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Filled Error"
+            variant="error"
+            onClick={() => console.log('clicked')}
+            loading
+          />
+        </Wrapper>
+      </FlexWrapper>
+      <FlexWrapper>
+        <Wrapper>
+          <Button
+            text="Outline Basic"
+            variant="basic"
+            onClick={() => console.log('clicked')}
+            loading
+            btnType="outline"
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Outline Primary"
+            variant="primary"
+            onClick={() => console.log('clicked')}
+            loading
+            btnType="outline"
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Outline Success"
+            variant="success"
+            onClick={() => console.log('clicked')}
+            loading
+            btnType="outline"
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Outline Error"
+            variant="error"
+            onClick={() => console.log('clicked')}
+            loading
+            btnType="outline"
+          />
+        </Wrapper>
+      </FlexWrapper>
+      <FlexWrapper>
+        <Wrapper>
+          <Button
+            btnType="link"
+            text="Basic Link"
+            href="#"
+            loading
+            onClick={() => console.log('clicked')}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            btnType="link"
+            text="Primary Link"
+            variant="primary"
+            href="#"
+            loading
+            onClick={() => console.log('clicked')}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            btnType="link"
+            text="Success Link"
+            variant="success"
+            href="#"
+            loading
+            onClick={() => console.log('clicked')}
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            btnType="link"
+            text="Error Link"
+            variant="error"
+            href="#"
+            loading
+            onClick={() => console.log('clicked')}
+          />
+        </Wrapper>
+      </FlexWrapper>
+      <SectionTitle>Input</SectionTitle>
       <FlexWrapper>
         <Wrapper>
           <InputText id="input1" label="Disabled style" type="text" disabled />
