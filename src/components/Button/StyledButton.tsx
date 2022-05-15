@@ -69,7 +69,7 @@ export const getBtnTypeThemeVariant = (
 
 export const StyledLinkButton = styled.a<{
   loading?: boolean;
-  variant?: "primary" | "basic" | "success" | "error";
+  variant?: ThemeVariants;
   disabled?: boolean;
 }>`
   text-decoration: none;
@@ -257,9 +257,79 @@ export const StyledButton = styled("button")<{
   }};
 `;
 
-export const SpinningIcon = styled.span`
-  > * {
+export const SpinningIcon = styled.span<{
+  variant?: ThemeVariants;
+  btnTypeThemeVariant: BtnTypeThemeVariants;
+}>`
+  > svg {
     margin-left: 4px;
     animation: ${spinning} 1s infinite linear;
   }
+
+  ${(props) => {
+    switch (props.btnTypeThemeVariant) {
+      case "filled-primary":
+        return css`
+          color: #fff;
+        `;
+      case "filled-basic":
+        return css`
+          color: #111827;
+        `;
+      case "filled-success":
+        return css`
+          color: #fff;
+        `;
+      case "filled-error":
+        return css`
+          color: #fff;
+        `;
+      case "outline-primary":
+        return css`
+          color: #0095ff;
+        `;
+      case "outline-basic":
+        return css`
+          color: black;
+        `;
+      case "outline-success":
+        return css`
+          color: #27ae60;
+        `;
+      case "outline-error":
+        return css`
+          color: #e62143;
+        `;
+    }
+  }};
+`;
+
+export const LinkSpinningIcon = styled.span<{
+  variant?: ThemeVariants;
+}>`
+  > svg {
+    margin-left: 4px;
+    animation: ${spinning} 1s infinite linear;
+  }
+
+  ${(props) => {
+    switch (props.variant) {
+      case "primary":
+        return css`
+          color: #0095ff;
+        `;
+      case "basic":
+        return css`
+          color: #2e3032;
+        `;
+      case "success":
+        return css`
+          color: #27ae60;
+        `;
+      case "error":
+        return css`
+          color: #e62143;
+        `;
+    }
+  }};
 `;

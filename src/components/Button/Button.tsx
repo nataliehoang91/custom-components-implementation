@@ -1,6 +1,6 @@
 import React, { MouseEvent, FocusEvent, ReactElement, ReactNode } from "react";
 
-import { SpinnerIcon } from "@chakra-ui/icons";
+import { RepeatIcon } from "@chakra-ui/icons";
 
 import {
   StyledLinkButton,
@@ -10,6 +10,7 @@ import {
   BtnTypes,
   getThemeDisabled,
   SpinningIcon,
+  LinkSpinningIcon,
 } from "./StyledButton";
 
 export interface ButtonProps {
@@ -46,8 +47,10 @@ const Button = ({
       >
         {text}
         {loading === true && (
-          <SpinningIcon>
-            <SpinnerIcon size="xl" />
+          <SpinningIcon
+            btnTypeThemeVariant={getBtnTypeThemeVariant(variant, btnType)}
+          >
+            <RepeatIcon size="xl" />
           </SpinningIcon>
         )}
       </StyledButton>
@@ -63,9 +66,9 @@ const Button = ({
     >
       {text}
       {loading === true && (
-        <SpinningIcon>
-          <SpinnerIcon size="xl" />
-        </SpinningIcon>
+        <LinkSpinningIcon variant={variant}>
+          <RepeatIcon size="xl" />
+        </LinkSpinningIcon>
       )}
     </StyledLinkButton>
   );
