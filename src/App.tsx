@@ -272,7 +272,13 @@ function App() {
       <SectionTitle>Input</SectionTitle>
       <FlexWrapper>
         <Wrapper>
-          <InputText id="input1" label="Disabled style" type="text" disabled />
+          <InputText
+            placeholder="This input was disable"
+            id="input1"
+            label="Disabled style"
+            type="text"
+            disabled
+          />
         </Wrapper>
         <Wrapper>
           <InputText
@@ -281,10 +287,16 @@ function App() {
             type="text"
             isError
             errorMessage="Got error"
+            placeholder="This is error input"
           />
         </Wrapper>
         <Wrapper>
-          <InputText id="input3" label="Normal style" type="text" />
+          <InputText
+            id="input3"
+            label="Normal style"
+            type="text"
+            placeholder="Please start typing..."
+          />
         </Wrapper>
       </FlexWrapper>
     </Container>
