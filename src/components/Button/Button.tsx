@@ -1,4 +1,7 @@
 import React, { MouseEvent, FocusEvent, ReactElement, ReactNode } from "react";
+
+import { SpinnerIcon } from "@chakra-ui/icons";
+
 import {
   StyledLinkButton,
   StyledButton,
@@ -6,6 +9,7 @@ import {
   ThemeVariants,
   BtnTypes,
   getThemeDisabled,
+  SpinningIcon,
 } from "./StyledButton";
 
 export interface ButtonProps {
@@ -30,17 +34,24 @@ const Button = ({
   href,
 }: ButtonProps): ReactElement => {
   return btnType !== "link" ? (
-    <StyledButton
-      onClick={onClick}
-      onBlur={onBlur}
-      disabledType={getThemeDisabled(disabled, btnType)}
-      loading={loading}
-      variant={variant}
-      disabled={disabled}
-      btnTypeThemeVariant={getBtnTypeThemeVariant(variant, btnType)}
-    >
-      {text}
-    </StyledButton>
+    <>
+      <StyledButton
+        onClick={onClick}
+        onBlur={onBlur}
+        disabledType={getThemeDisabled(disabled, btnType)}
+        loading={loading}
+        variant={variant}
+        disabled={disabled}
+        btnTypeThemeVariant={getBtnTypeThemeVariant(variant, btnType)}
+      >
+        {text}
+        {loading === true && (
+          <SpinningIcon>
+            <SpinnerIcon size="xl" />
+          </SpinningIcon>
+        )}
+      </StyledButton>
+    </>
   ) : (
     <StyledLinkButton
       onClick={onClick}
@@ -51,6 +62,11 @@ const Button = ({
       href={href}
     >
       {text}
+      {loading === true && (
+        <SpinningIcon>
+          <SpinnerIcon size="xl" />
+        </SpinningIcon>
+      )}
     </StyledLinkButton>
   );
 };

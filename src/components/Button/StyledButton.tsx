@@ -1,4 +1,14 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const spinning = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export type ThemeVariants = "primary" | "basic" | "success" | "error";
 export type BtnTypes = "filled" | "link" | "outline";
@@ -136,12 +146,20 @@ export const StyledButton = styled("button")<{
   touch-action: manipulation;
   vertical-align: middle;
   width: 160px;
+  white-space: nowrap;
 
   &:focus {
     border-color: #008296;
     box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
     outline: 0;
   }
+
+  ${({ loading }) =>
+    loading === true
+      ? css`
+          pointer-events: none;
+        `
+      : ""};
 
   ${(props) => {
     switch (props.btnTypeThemeVariant) {
@@ -237,4 +255,11 @@ export const StyledButton = styled("button")<{
         `;
     }
   }};
+`;
+
+export const SpinningIcon = styled.span`
+  > * {
+    margin-left: 4px;
+    animation: ${spinning} 1s infinite linear;
+  }
 `;

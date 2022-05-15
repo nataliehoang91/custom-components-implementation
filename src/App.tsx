@@ -140,6 +140,32 @@ function App() {
           />
         </Wrapper>
       </FlexWrapper>
+      <FlexWrapper>
+        <Wrapper>
+          <Button
+            text="Filled (Loading)"
+            onClick={() => console.log("clicked")}
+            loading
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Outline (Loading)"
+            variant="primary"
+            onClick={() => console.log("clicked")}
+            loading
+            btnType="outline"
+          />
+        </Wrapper>
+        <Wrapper>
+          <Button
+            text="Link (Loading)"
+            onClick={() => console.log("clicked")}
+            loading
+            btnType="link"
+          />
+        </Wrapper>
+      </FlexWrapper>
     </Container>
   );
 }
