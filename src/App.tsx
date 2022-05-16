@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 const FlexWrapper = styled.div`
   display: flex;
   margin: 12px;
+  align-items: center;
 `;
 const Container = styled.div`
   padding: 48px;
