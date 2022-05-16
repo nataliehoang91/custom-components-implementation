@@ -4,6 +4,7 @@ import "./App.css";
 import styled from "styled-components";
 
 import Button from "./components/Button/Button";
+import InputText from "./components/InputText/InputText";
 
 const Wrapper = styled.div`
   margin: 12px;
@@ -266,6 +267,45 @@ function App() {
             href="#"
             loading
             onClick={() => console.log("clicked")}
+          />
+        </Wrapper>
+      </FlexWrapper>
+      <ComponentTitle>Input</ComponentTitle>
+      <SectionTitle>Disabled</SectionTitle>
+      <FlexWrapper>
+        <Wrapper>
+          <InputText
+            placeholder="This input was disable"
+            id="input1"
+            label="Disabled style"
+            type="text"
+            disabled
+          />
+        </Wrapper>
+      </FlexWrapper>
+
+      <SectionTitle>Error</SectionTitle>
+
+      <FlexWrapper>
+        <Wrapper>
+          <InputText
+            id="input2"
+            label="Error style"
+            type="text"
+            isError
+            errorMessage="Got error"
+            placeholder="This is error input"
+          />
+        </Wrapper>
+      </FlexWrapper>
+      <SectionTitle>Normal</SectionTitle>
+      <FlexWrapper>
+        <Wrapper>
+          <InputText
+            id="input3"
+            label="Normal style"
+            type="text"
+            placeholder="Please start typing..."
           />
         </Wrapper>
       </FlexWrapper>
